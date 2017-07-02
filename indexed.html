@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgetier</title>
+    <link rel="icon" href="favicon.ico" />
+
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/pure-min.css" integrity="sha384-" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.0/build/grids-responsive-min.css">
+    
+    <link rel="stylesheet" href="css\design.css">
+    <link rel="stylesheet" href="css\base.css">
+    <link rel="stylesheet" href="css\BarChart.css">
+
+    <!--JSChart files-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.js"></script>
+    <script language="javascript" type="text/javascript" src="js\utils.js"></script>
+
+    <!-- JIT Library File (JS InfoVIS toolkit)-->
+    <script language="javascript" type="text/javascript" src="js\jit.js"></script>
+    <script language="javascript" type="text/javascript" src="js\infovischart.js"></script>
+</head>
+
+<body onload="init();">
+
+<div class="l-content">
+    <div class="panels pure-g">
+        <div class="pure-u-1 pure-u-md-1-2">
+            <div class="panel panel-first">
+                <div class="panel-header">
+                  <canvas id="canvas"></canvas>
+                </div>
+             
+                <div class="l-box">
+                   <h3 class="information-head">Transactions</h3>
+                   <table class="pure-table">
+                    <thread>
+                      <tr>
+                      <th>cid</th>
+                      <th>dateOf</th>
+                      <th>name</th>
+                      <th>price</th>
+                      </tr>
+                    </thread>
+                    <tbody>
+                      <tr class="pure-table-odd">
+                      <td>1</td>
+                      <td>6/1/2017</td>
+                      <td>Steak n Shake</td>
+                      <td>10.34</td>
+                      </tr>
+                      <tr>
+                      <td>2</td>
+                      <td>6/2/2017</td>
+                      <td>Tokyo Sushi</td>
+                      <td>29.8</td>
+                      </tr>
+                      <tr class="pure-table-odd">
+                      <td>3</td>
+                      <td>6/7/2017</td>
+                      <td>Forever 21</td>
+                      <td>17.43</td>
+                      </tr>
+                      <tr>
+                      <td>4</td>
+                      <td>6/8/2017</td>
+                      <td>AMC Ticket</td>
+                      <td>13.44</td>
+                      </tr>
+                      <tr class="pure-table-odd">
+                      <td>5</td>
+                      <td>6/8/2017</td>
+                      <td>Great Wraps</td>
+                      <td>15.95</td>
+                      </tr>
+                      <tr>
+                      <td>6</td>
+                      <td>6/9/2017</td>
+                      <td>Swimsuit</td>
+                      <td>19.95</td>
+                      </tr>
+                      <tr class="pure-table-odd">
+                      <td>7</td>
+                      <td>6/22/2017</td>
+                      <td>Train Ticket</td>
+                      <td>78.2</td>
+                      </tr>
+                      <tr>
+                      <td>8</td>
+                      <td>6/26/2017</td>
+                      <td>Phone Bill</td>
+                      <td>35</td>
+                      </tr>
+                      <tr class="pure-table-odd">
+                      <td>9</td>
+                      <td>6/28/2017</td>
+                      <td>Taylor - Hair</td>
+                      <td>215</td>
+                    </tr>
+                    <tr>
+                      <td>Total</td>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>435.11</td>
+                  </tbody>
+                  </table>
+               </div>
+               <div class="l-box">
+                   <h3 class="information-head">Deposits</h3>
+                    <table class="pure-table">
+                    <thread>
+                      <tr>
+                      <th>cid</th>
+                      <th>dateOf</th>
+                      <th>name</th>
+                      <th>price</th>
+                      </tr>
+                    </thread>
+                    <tbody>
+                      <tr class="pure-table-odd">
+                      <td>1</td>
+                      <td>6/23/2017</td>
+                      <td>Muny Paycheck</td>
+                      <td>222.28</td>
+                      </tr>
+                      <tr>
+                      <td>Total</td>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>222.28</td>
+                  </tbody>
+                  </table>
+               </div>
+            </div>
+        </div>
+
+        <div class="pure-u-1 pure-u-md-1-2">
+            <div class="panel panel-second panel-selected">
+                <div class="panel-header">
+                   <div id="infovis"></div>
+
+                    <h2>2017</h2>
+
+                    <span class="panel-label">
+                        June 
+                    </span>
+                </div>
+                    <div class="legend">
+                        <div class="color1 swatch">NN</div> <div class="color2 swatch">N</div> <div class="color3 swatch">O</div> 
+                    </div>
+                <div class="l-box">
+                   <h3 class="information-head">Non-Neccesity Spending (NN)</h3>
+                    <table class="pure-table">
+                    <thread>
+                      <tr>
+                      <th>cid</th>
+                      <th>dateOf</th>
+                      <th>name</th>
+                      <th>price</th>
+                      </tr>
+                    </thread>
+                    <tbody>
+                        <tr class="pure-table-odd">
+                        <td>1</td>
+                        <td>6/1/2017</td>
+                        <td>Steak n Shake</td>
+                        <td>10.34</td>
+                        </tr>
+                        <tr>
+                        <td>2</td>
+                        <td>6/2/2017</td>
+                        <td>Tokyo Sushi</td>
+                        <td>29.8</td>
+                        </tr>
+                        <tr class="pure-table-odd">
+                        <td>3</td>
+                        <td>6/7/2017</td>
+                        <td>Forever 21</td>
+                        <td>17.43</td>
+                        </tr>
+                        <tr>
+                        <td>4</td>
+                        <td>6/8/2017</td>
+                        <td>AMC Ticket</td>
+                        <td>13.44</td>
+                        </tr>
+                        <tr class="pure-table-odd">
+                        <td>5</td>
+                        <td>6/8/2017</td>
+                        <td>Great Wraps</td>
+                        <td>15.95</td>
+                      </tr>
+                    <tr>
+                      <td>Total</td>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>86.96</td>
+                  </tbody>
+                  </table>
+               </div>
+               <div class="l-box">
+                   <h3 class="information-head">Necessities (N)</h3>
+                   <table class="pure-table">
+                    <thread>
+                      <tr>
+                      <th>cid</th>
+                      <th>dateOf</th>
+                      <th>name</th>
+                      <th>price</th>
+                      </tr>
+                    </thread>
+                    <tbody>
+                    <tr class="pure-table-odd">
+                    <td>1</td>
+                    <td>6/9/2017</td>
+                    <td>Swimsuit</td>
+                    <td>19.95</td>
+                    </tr>
+                    <tr>
+                    <td>2</td>
+                    <td>6/22/2017</td>
+                    <td>Train Ticket</td>
+                    <td>78.2</td>
+                    </tr>
+                    <tr class="pure-table-odd">
+                    <td>3</td>
+                    <td>6/26/2017</td>
+                    <td>Phone Bill</td>
+                    <td>35</td>
+                    </tr>
+                  <tr>
+                      <td>Total</td>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>133.15</td>
+                  </tbody>
+                  </table>
+               </div>
+               <div class="l-box">
+                   <h3 class="information-head">Other Expenses (O)</h3>
+                   <table class="pure-table">
+                    <thread>
+                      <tr>
+                      <th>cid</th>
+                      <th>dateOf</th>
+                      <th>name</th>
+                      <th>price</th>
+                      </tr>
+                    </thread>
+                    <tbody>
+                    <tr class="pure-table-odd">
+                      <td>1</td>
+                      <td>6/28/2017</td>
+                      <td>Taylor - Hair</td>
+                      <td>215</td>
+                    </tr>
+                  <tr>
+                      <td>Total</td>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>215.00</td>
+                  </tbody>
+                  </table>
+               </div>
+               <div class="l-box">
+                   <h3 class="information-head">Upcoming Expenses</h3>
+                   <table class="pure-table">
+                    <thread>
+                      <tr>
+                      <th>cid</th>
+                      <th>dateOf</th>
+                      <th>name</th>
+                      <th>price</th>
+                      </tr>
+                    </thread>
+                    <tbody>
+                    <tr class="pure-table-odd">
+                    <td>1</td>
+                    <td>7/1/2017</td>
+                    <td>KC Trip</td>
+                    <td>100</td>
+                    </tr>
+                  <tr>
+                      <td>Total</td>
+                      <td>...</td>
+                      <td>...</td>
+                      <td>100.00</td>
+                  </tbody>
+                  </table>
+               </div>
+            </div>
+        </div>
+        </div>
+    </div> 
+
+    
+</div> 
+
+     
+     <script>
+        var config = {
+            type: 'line',
+            data: {
+                labels: ["06/05", "06/10", "06/15", "06/20", "06/25", "06/30"],
+                datasets: [{
+                    label: "Checkings",
+                    backgroundColor: window.chartColors.first,
+                    borderColor: window.chartColors.first,
+                    data: ["497.71", "430.94", "430.94", "430.94", "575.02", "500.20"],
+                    fill: false,
+                }],
+            },
+            options: {
+                responsive: true,
+                title:{
+                    display:true,
+                    text:'Account Status'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Date'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Balance'
+                        }
+                    }]
+                }
+            }
+        };
+
+        window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myLine = new Chart(ctx, config);
+
+             var json = {
+          'color': ['#729EA1', '#FFFFFC', '#CA907E'], 
+            'label': ['NN', 'N', 'O'],
+            'values': [
+            {
+              'label': '06/05/2017',
+              'values': [40.14, 0, 0]
+            }, 
+            {
+              'label': '06/10/2017',
+              'values': [86.96, 19.95, 0]
+            }, 
+            {
+              'label': '06/15/2017',
+              'values': [86.96, 19.95, 0]
+            }, 
+            {
+              'label': '06/20/2017',
+              'values': [86.96, 19.95, 0]
+            }, 
+            {
+              'label': '06/25/2017',
+              'values': [86.96, 98.15, 0]
+            }, 
+            {
+              'label': '06/30/2017',
+              'values': [96.96, 133.15, 215.00]
+            }]
+            
+        };
+        //end
+        var json2 = {
+            'values': [
+            {
+              'label': 'date A',
+              'values': [10, 40, 15, 7]
+            }, 
+            {
+              'label': 'date B',
+              'values': [30, 40, 45, 9]
+            }, 
+            {
+              'label': 'date D',
+              'values': [55, 30, 34, 26]
+            }, 
+            {
+              'label': 'date C',
+              'values': [26, 40, 85, 28]
+            }]
+            
+        };
+          //init BarChart
+          var barChart = new $jit.BarChart({
+            //id of the visualization container
+            injectInto: 'infovis',
+            //whether to add animations
+            animate: true,
+            //horizontal or vertical barcharts
+            orientation: 'vertical',
+            //bars separation
+            barsOffset: 20,
+            //visualization offset
+            Margin: {
+              top:5,
+              left: 5,
+              right: 5,
+              bottom:5
+            },
+            //labels offset position
+            labelOffset: 5,
+            //bars style
+            type: 'stacked',
+            //whether to show the aggregation of the values
+            showAggregates:true,
+            //whether to show the labels for the bars
+            showLabels:true,
+            //labels style
+            Label: {
+              type: labelType, //Native or HTML
+              size: 13,
+              family: 'Arial',
+              color: 'white'
+            },
+            //add tooltips
+            Tips: {
+              enable: true,
+              onShow: function(tip, elem) {
+                tip.innerHTML = "<b>" + elem.name + "</b>: " + elem.value;
+              }
+            }
+          });
+          //load JSON data.
+          barChart.loadJSON(json);
+          //end
+          
+
+        };
+      </script>
+
+</body>
+</html>

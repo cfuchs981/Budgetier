@@ -1,0 +1,15 @@
+{
+	"manifest_version" : 2, 
+	"name" : "Budgetier",
+	"version" : "1.0",
+	"description" : "Simple budget tracker",
+    "browser_action": {
+    	"default_icon" : "favicon.ico",
+    	"default_popup" : "indexed.html"
+    },
+    "content_scripts" : [ {
+    	"matches" : ["http://*/*"],
+    	"run-at" : "document_start",
+    	"js" : ["utils.js", "jit.js", "infovischart.js"]
+    	}]
+}

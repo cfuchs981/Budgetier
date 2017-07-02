@@ -1,0 +1,126 @@
+/*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
+body {
+    background-color: #FAFAFA;
+}
+
+h2, h3 {
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+p {
+    line-height: 1.6em;
+}
+
+table {
+    margin: 0 auto; 
+}
+
+canvas{
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        -ms-user-select: none;
+    }
+
+.spaced-font {
+    text-transform: uppercase;
+    color: white;
+}
+
+/*
+ * -- Layout Styles --
+ */
+.l-content {
+    margin: 0 auto;
+}
+
+.l-box {
+    padding: 0.5em 2em;
+}
+
+.legend {
+    padding: 0.5em 2em;
+}
+
+.swatch {
+     width: .20em;
+    height: 1em;
+    display: inline;
+    margin: 5px 5px 5px 5px;
+    padding: 5px 5px 5px 5px;
+}
+
+.color1 {
+    background-color: #729EA1;
+}
+.color2 {
+    background-color: #FFFFFC;
+}
+.color3 {
+    background-color: #CA907E;
+}
+
+
+ .panels,
+ .information {
+    max-width: 980px;
+    margin: 0 auto;
+ }
+.panels {
+    margin-bottom: 3.125em;
+    text-align: center;
+}
+
+.panel {
+    border: 1px solid #ddd;
+    margin: 0 0.5em 2em;
+    padding: 0 0 3em;
+    background-color: white;
+}
+
+.panel-first .panel-header {
+    background: #F7DBA7;
+}
+
+.panel-second .panel-header {
+    background: #BEB7A4;
+}
+
+.panel-header {
+    background: #111;
+    color: #fff;
+}
+    .panel-header h2 {
+        margin: 0;
+        padding-top: 2em;
+        font-size: 1em;
+        font-weight: normal;
+
+    }
+
+.panel-label {
+    font-size: 6em;
+    margin: 0.2em 0 0;
+    font-weight: 100;
+}
+    .panel-label span {
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.2em;
+        padding-bottom: 2em;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.5);
+        *color: #fff;
+    }
+
+
+
+.information-head {
+    color: gray;
+    font-weight: 500;
+}
+
