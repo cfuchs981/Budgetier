@@ -9,6 +9,5 @@ To run, either clone the repository or download the zipped folder. All hardcoded
 
 ## Sample Output 
 
-[[https://github.com/cfuchs981/Budgetier/blob/master/img/budgetsample.png|alt=sampleoutput]]
-
+![Alt text](/relative/path/to/budgetsample.png?raw=true "Optional Title")
 
